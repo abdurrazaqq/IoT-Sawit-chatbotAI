@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #060e1a;
+  color: #e0e8f0;
+  font-family: "JetBrains Mono", "Courier New", monospace;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  min-height: 36px;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a1628;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border-radius: 4px;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 6px #00e67644;
+  }
+  50% {
+    box-shadow: 0 0 16px #00e676aa;
+  }
+}
+
+.nav-item:hover {
+  background: #0d2a4a !important;
+}
+
+.nav-item.active {
+  background: #0f3460 !important;
+  border-left-color: #00b4d8 !important;
+}
+
+.ctrl-btn {
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.ctrl-btn:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 860px) {
+  .app-shell {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+  }
+
+  .sidebar nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .dashboard-content {
+    padding: 16px !important;
+  }
+
+  .ai-panel {
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    height: min(540px, calc(100vh - 120px)) !important;
+  }
+}

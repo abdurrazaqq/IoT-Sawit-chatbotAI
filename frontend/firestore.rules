@@ -1,0 +1,35 @@
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /sensor_data/{docId} {
+      allow read, write: if true;
+    }
+
+    match /notifications/{docId} {
+      allow read, write: if true;
+    }
+
+    match /schedules/{docId} {
+      allow read, write: if true;
+    }
+
+    match /settings/{docId} {
+      allow read, write: if true;
+    }
+
+    match /ai_chat_history/{docId} {
+      allow read, write: if true;
+    }
+
+    match /control_logs/{docId} {
+      allow read, write: if true;
+    }
+
+    match /users/{uid} {
+      allow read, write: if true;
+    }
+  }
+}
